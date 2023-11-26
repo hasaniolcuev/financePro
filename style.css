@@ -8,13 +8,13 @@
 }
 
 :root {
-	--grey: #F1F0F6;
-	--dark-grey: #8D8D8D;
+	--grey: #efeded;
+	--dark-grey: #fff6f6;
 	--light: #fff;
 	--dark: #000;
-	--green: #81D43A;
+	--green: #3abfd4;
 	--light-green: #E3FFCB;
-	--blue: #1775F1;
+	--blue: rgb(23, 208, 241);
 	--light-blue: #D0E4FF;
 	--dark-blue: #0C5FCD;
 	--red: #FC3B56;
@@ -618,9 +618,9 @@ main .btn-send:hover {
  
 
 
-  background: #5E5DF0;
+  background: #3abfd4;
   border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-shadow: #3abfd4 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -639,3 +639,27 @@ main .btn-send:hover {
   border: 0;
 
 }
+
+
+
+.ceviri-inp{
+	flex-grow: 1;
+	padding: 4px 16px;
+	border-radius: 5px;
+	outline: none;
+	background: var(--grey);
+	border: none;
+	transition: all .3s ease;
+ 
+
+}
+
+
+.ceviri-inp:focus{
+	box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
+}
+
+
+
+
+

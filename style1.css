@@ -75,14 +75,6 @@
    color: #ffff;
   }
   
-  .container33 input{
-    
-    padding: 5px 100px;
-    border-radius:  30px 00px 0px 30px;
-   margin-left: 350px;
-
-  
-  }
   
 
   
@@ -110,4 +102,84 @@
 
 .baslik tbody{
    padding-left: 50px;
+}
+
+bdfbd{
+  
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+
+}
+
+
+
+
+/*--------------------
+App
+--------------------*/
+
+
+
+.container33 input{
+  flex-grow: 1;
+	padding: 10px 16px;
+	border-radius: 5px;
+	outline: none;
+	background: var(--grey);
+	border: none;
+	transition: all .3s ease;
+  width: 400px;
+margin-left: 35%;
+
+}
+
+
+.container33 input:focus{
+  box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
+}
+
+
+.container33 .search-button{
+  padding: 8px 16px;
+	background: var(--blue);
+	border-radius: 5px;
+	color: var(--light);
+	cursor: pointer;
+	border: none;
+	transition: all .3s ease;
+}
+
+
+.container33 .search-button:hover{
+  background: var(--dark-blue);
+}
+
+  
+.baslik p{
+  margin-top: 40px;
+  font-size: larger;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.baslik{
+  border-bottom: groove;
+ 
 }

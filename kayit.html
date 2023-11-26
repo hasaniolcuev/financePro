@@ -40,16 +40,19 @@ class="input-group">
 <input type="text" class="input-field" placeholder="Enter USER Name" required>
 <input type="password" class="input-field" placeholder="Enter Password" required>
 <a href="#">Lost Your Password</a>
-<button type="submit" class="submit-btn"><a href="r.html">Log In</a></button>
+<button type="submit" class="submit-btn"><a href="index.html">Log In</a></button>
 </form>
 
 <form  id="Register" class="input-group">
   <input type="text" class="input-field" placeholder="Enter USER Name" required>
-  <input type="password" class="input-field" placeholder="Enter Password" required>
+  <input type="date" class="input-field" placeholder="Enter Password" required>
   <input type="email" class="input-field" placeholder="Enter Email" required>
+    <input type="password" class="input-field" placeholder="Enter Password" required>
+   
+    
 
   <a href="#">By sing in , you agree to the terms, data policy and cookies policy </a>
-  <button type="submit" class="submit-btn"><a href="r.html">sing Up</a></button>
+  <button type="submit" class="submit-btn"><a href="index.html">sing Up</a></button>
   </form>
 
 
@@ -99,7 +102,10 @@ function login(){
   }
   
   a{
-    color: black;
+    color: rgb(0, 0, 0);
+  }
+  .submit-btn button{
+    color: #ffff;
   }
   
   .main video{
@@ -119,7 +125,7 @@ function login(){
     width: 380px;
     height: 480px;
     position: relative;
-    background: rgba(255, 255, 255, 0.842);
+    background:  rgba(255, 255, 255, 0.842);
     box-shadow: 0 0 20px 9px #6865641e;
     border-radius: 35px;
     margin: 6% auto;
@@ -160,6 +166,7 @@ function login(){
     width: 110px;
     border-radius: 35px;
     transition: .5s;
+    color: #fff;
     
   
   }
