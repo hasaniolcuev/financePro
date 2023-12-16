@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>IOLCHUEV IF Charts</title>
+<link
+rel="icon"
+type="image/png"
+sizes="32x32"
+href="IOLCHUEV (3)photoAid-removed-background.png"
+/>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+    <script>
+        window.onload = function() {
+            var dataPoints1 = [];
+            var dataPoints2 = [];
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2",
+                backgroundColor: "black",
+                title: {
+                    text: "Live Data",
+                    fontColor: "white"
+                },
+                axisX: {
+                    title: "Time",
+                    labelFontColor: "white"
+                },
+                axisY: {
+                    title: "Exchange Rate",
+                    labelFontColor: "white"
+                },
+                data: [
+                    {
+                        type: "line",
+                        color: "red",
+                        name: "Line 1",
+                        showInLegend: true,
+                        dataPoints: dataPoints1
+                    },
+                    {
+                        type: "line",
+                        color: "green",
+                        name: "Line 2",
+                        showInLegend: true,
+                        dataPoints: dataPoints2
+                    }
+                ]
+            });
+            updateData();
+
+            // Initial Values
+            var xValue = 0;
+            var yValue1 = 10;
+            var yValue2 = 20;
+            var newDataCount = 6;
+
+            function addData(data) {
+                if (newDataCount != 1) {
+                    $.each(data, function(key, value) {
+                        dataPoints1.push({ x: value[0], y: parseInt(value[1]) });
+                        dataPoints2.push({ x: value[0], y: parseInt(value[2]) });
+                        xValue++;
+                        yValue1 = parseInt(value[1]);
+                        yValue2 = parseInt(value[2]);
+                    });
+                } else {
+                    dataPoints1.push({ x: data[0][0], y: parseInt(data[0][1]) });
+                    dataPoints2.push({ x: data[0][0], y: parseInt(data[0][2]) });
+                    xValue++;
+                    yValue1 = parseInt(data[0][1]);
+                    yValue2 = parseInt(data[0][2]);
+                }
+
+                newDataCount = 1;
+                chart.render();
+                setTimeout(updateData, 1500);
+            }
+
+            function updateData() {
+                $.getJSON(
+                    "https://canvasjs.com/services/data/datapoints.php?xstart=" +
+                        xValue +
+                        "&ystart1=" +
+                        yValue1 +
+                        "&ystart2=" +
+                        yValue2 +
+                        "&length=" +
+                        newDataCount +
+                        "type=json",
+                    addData
+                );
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+</body>
+</html>
+
+

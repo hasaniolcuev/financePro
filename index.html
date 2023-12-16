@@ -5,7 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="style.css">
-	<title>AdminSite</title>
+  <link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="IOLCHUEV (3)photoAid-removed-background.png"
+/>
+	<title>Iolchuev IF</title>
 </head>
 <body>
 
@@ -32,10 +38,10 @@
 					<li><a href="#">Button</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
+			<li><a href="charts.html"><i class='bx bxs-chart icon' ></i> Charts</a></li>
 			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
 			<li class="divider" data-text="table and forms">Table and forms</li>
-			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
+			<li class="payment"><a href="payments.html"><i class="fa-regular fa-credit-card"></i> Payments</a></li>
 			<li>
 				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
@@ -52,35 +58,7 @@
         
 <!--gece mod-->
 
-<style>
-  body {
-    
-  }
 
-  .dark-mode {
-    background-color: #000000;
-    color: #000000;
-  }
-</style>
-
-
-<button id="toggleButton" onclick="toggleMode()"><i class="fa-solid fa-moon"></i></button>
-
-<script>
-  var body = document.body;
-var toggleButton = document.getElementById("toggleButton");
-var isDarkMode = false;
-
-function toggleMode() {
-  if (isDarkMode) {
-    body.classList.remove("dark-mode");
-  } else {
-    body.classList.add("dark-mode");
-  }
-
-  isDarkMode = !isDarkMode;
-}
-</script>
 <!----------------------------------------------------------------->
 
 
@@ -106,7 +84,7 @@ function toggleMode() {
 				<i class='bx bxs-bell icon' ></i>
 				<span class="badge">99</span>
 			</a>
-			<a href="#" class="nav-link">
+			<a href="comments/comments.html" class="nav-link">
 				<i class='bx bxs-message-square-dots icon' ></i>
 				<span class="badge">99</span>
 			</a>
@@ -632,7 +610,6 @@ function clearResult() {
 
 </body>
 </html>
-
 
 
 

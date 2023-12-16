@@ -27,6 +27,7 @@ html {
 body {
 	background: var(--grey);
 	overflow-x: hidden;
+	
 }
 
 a {
@@ -663,3 +664,9 @@ main .btn-send:hover {
 
 
 
+.payment{
+	margin-left: 20px;
+}
+.payment i{
+	margin-right: 10px;
+}
