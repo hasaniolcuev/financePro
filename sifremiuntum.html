@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Şifre Sıfırlama</title>
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
+  
+  #success-message {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+  }</style>
+<body>
+  <h1>Şifre Sıfırlama</h1>
+  
+  <div id="email-form">
+    <label for="email">E-posta Adresi:</label>
+    <input type="email" id="email" required>
+    <button onclick="sendVerificationCode()">Doğrulama Kodu Gönder</button>
+  </div>
+  
+  <div id="code-form" style="display: none;">
+    <label for="code">Doğrulama Kodu:</label>
+    <input type="text" id="code" required>
+    <button onclick="verifyCode()">Doğrula</button>
+  </div>
+  
+  <div id="password-form" style="display: none;">
+    <label for="new-password">Yeni Şifre:</label>
+    <input type="password" id="new-password" required>
+    <button onclick="resetPassword()">Şifreyi Sıfırla</button>
+  </div>
+  
+  <div id="success-message" style="display: none;">
+    Şifreniz başarıyla sıfırlandı. Yeni şifrenizle giriş yapabilirsiniz.
+  </div>
+  
+  <script >function sendVerificationCode() {
+    var email = document.getElementById('email').value;
+    
+    // Random kod oluşturma
+    var verificationCode = Math.floor(1000 + Math.random() * 9000);
+    
+    // Kodu geçici bir veritabanında veya önbellekte saklama
+    
+    // E-posta gönderme işlemleri
+    
+    // Doğrulama kodu gönderildiğinde forma geçiş yapma
+    document.getElementById('email-form').style.display = 'none';
+    document.getElementById('code-form').style.display = 'block';
+  }
+  
+  function verifyCode() {
+    var enteredCode = document.getElementById('code').value;
+    
+    // Geçici veritabanından veya önbellekten doğrulama kodunu alma
+    
+    if (enteredCode === verificationCode) {
+      // Doğrulama kodu doğru ise forma geçiş yapma
+      document.getElementById('code-form').style.display = 'none';
+      document.getElementById('password-form').style.display = 'block';
+    } else {
+      // Doğrulama kodu yanlış ise hata mesajı gösterme
+      alert('Geçersiz doğrulama kodu');
+    }
+  }
+  
+  function resetPassword() {
+    var newPassword = document.getElementById('new-password').value;
+    
+    // Yeni şifrenin güvenlik kontrolleri
+    
+    // Şifrenin sıfırlandığına dair geri bildirim gösterme
+    document.getElementById('password-form').style.display = 'none';
+    document.getElementById('success-message').style.display = 'block';
+  }</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--hesap makinesi baslayis-->
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <style>
+   .calculator {
+     height: 350px;
+     width: 200px;
+     background-color: rgb(249, 246, 246);
+     
+    gap: 30px;
+   }
+ 
+
+   .calculator input[type="text"] {
+       flex-grow: 1;
+ padding: 4px 16px;
+ border-radius: 5px;
+ outline: none;
+ background: var(--grey);
+ border: groove #3abfd4;
+ transition: all .3s ease;
+     
+   }
+
+   .calculator input[type="button"] {
+     
+       background: #3abfd4;
+ border-radius: 999px;
+ box-shadow: #3abfd4 0 10px 20px -10px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+ font-size: 16px;
+ font-weight: 700;
+ line-height: 24px;
+ opacity: 1;
+ outline: 0 solid transparent;
+ padding: 8px 18px;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ width: fit-content;
+ word-break: break-word;
+ border: 0;
+ margin: 6px;
+
+   }
+
+
+
+   #toggleButton {
+     margin-bottom: 10px;
+ background: #3abfd4;
+ border-radius: 999px;
+ box-shadow: #3abfd4 0 10px 20px -10px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+ font-size: 16px;
+ font-weight: 700;
+ line-height: 24px;
+ opacity: 1;
+ outline: 0 solid transparent;
+ padding: 8px 18px;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ width: fit-content;
+ word-break: break-word;
+ border: 0;
+
+   }
+ </style>
+
+ <button id="toggleButton" onclick="toggleCalculator()"><i class="fa-solid fa-calculator"></i></button>
+ <div id="calculatorContainer" style="display: none;">
+   <div class="calculator">
+     <input type="text" id="result" placeholder="0" readonly>
+     <input type="button" value="1" onclick="appendNumber(1)">
+     <input type="button" value="2" onclick="appendNumber(2)">
+     <input type="button" value="3" onclick="appendNumber(3)">
+    
+     <input type="button" value="4" onclick="appendNumber(4)">
+     <input type="button" value="5" onclick="appendNumber(5)">
+     <input type="button" value="6" onclick="appendNumber(6)">
+     
+     <input type="button" value="7" onclick="appendNumber(7)">
+     <input type="button" value="8" onclick="appendNumber(8)">
+     <input type="button" value="9" onclick="appendNumber(9)">
+      <input type="button" value="0" onclick="appendNumber(0)">
+<input type="button" value="+" onclick="appendOperator('+')">
+<input type="button" value="-" onclick="appendOperator('-')">
+     <input type="button" value="×" onclick="appendOperator('*')">
+    
+     <input type="button" value="." onclick="appendDecimal()">
+     <input type="button" value="=" onclick="calculate()">
+     <input type="button" value="÷" onclick="appendOperator('/')">
+     <input type="button" value="C" onclick="clearResult()">
+   </div>
+ </div>
+
+ <script >let calculatorContainer = document.getElementById("calculatorContainer");
+   let toggleButton = document.getElementById("toggleButton");
+   
+   function toggleCalculator() {
+     if (calculatorContainer.style.display === "none") {
+       calculatorContainer.style.display = "block";
+     } else {
+       calculatorContainer.style.display = "none";
+     }
+   }
+   
+   // Diğer hesaplama fonksiyonları burada...
+   let result = document.getElementById("result");
+
+function appendNumber(number) {
+ result.value += number;
+}
+
+function appendOperator(operator) {
+ result.value += operator;
+}
+
+function appendDecimal() {
+ if (!result.value.includes(".")) {
+   result.value += ".";
+ }
+}
+
+function calculate() {
+ try {
+   result.value = eval(result.value);
+ } catch (error) {
+   result.value = "Hata";
+ }
+}
+
+function clearResult() {
+ result.value = "";
+}
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+<!--hesap makinesi bitis-->
+
+
+
+</body>
+</html>
+
+
