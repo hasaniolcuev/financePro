@@ -68,19 +68,23 @@ li {
 	display: none;
 }
 #sidebar .brand {
-	font-size: 24px;
+	font-size: 25px;
 	display: flex;
 	align-items: center;
-	height: 64px;
+	height: 55px;
 	font-weight: 700;
 	color: var(--blue);
-	position: sticky;
-	top: 0;
+	top: 20px;
 	left: 0;
 	z-index: 100;
 	background: var(--light);
 	transition: all .3s ease;
-	padding: 0 6px;
+	
+    margin-left:  -20px;	
+}
+#sidebar .brand img{
+	padding: 10px 15px;
+	margin-top: 25px;
 }
 #sidebar .icon {
 	min-width: 48px;
@@ -665,8 +669,53 @@ main .btn-send:hover {
 
 
 .payment{
-	margin-left: 20px;
+	margin-left: 0px;
+	padding: 10px 15px;
 }
 .payment i{
-	margin-right: 10px;
+	margin-right: 25px;
+}
+
+/* buats*/
+body {
+    font-family: Arial, sans-serif;
+}
+
+.nav-link {
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.badge {
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.notification-dropdown {
+    position: absolute;
+    display: none;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    padding: 10px;
+    z-index: 1;
+}
+
+#masage-box{
+	background: #3abfd4;
+}
+
+.curs1{
+	margin-left: 9%;
 }
